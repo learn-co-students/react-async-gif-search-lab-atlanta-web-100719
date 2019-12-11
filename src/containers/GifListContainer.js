@@ -16,9 +16,8 @@ class GifListContainer extends React.Component{
         })
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault()
-        fetch(`https://api.giphy.com/v1/gifs/search?q=${event.target.searchGif.value}&api_key=dc6zaTOxFJmzC&rating=g`)
+    handleSubmit = (arg) => {
+        fetch(`https://api.giphy.com/v1/gifs/search?q=${arg}&api_key=dc6zaTOxFJmzC&rating=g`)
         .then(res => res.json())
         .then(data => {
             this.setState({gifList: data.data})

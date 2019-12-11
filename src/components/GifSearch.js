@@ -8,6 +8,11 @@ class GifSearch extends React.Component{
         })
     }
 
+
+    handleClick = (event) =>{
+        event.preventDefault()
+       this.props.handleSubmit(this.state.searchGif)
+    }
     
 
     state = {
@@ -18,7 +23,7 @@ class GifSearch extends React.Component{
         return(
             <div>
 
-            <form onSubmit={this.props.handleSubmit}>
+            <form onSubmit={this.handleClick}>
                 <label>
                     Enter A Search Term:
                 </label>
