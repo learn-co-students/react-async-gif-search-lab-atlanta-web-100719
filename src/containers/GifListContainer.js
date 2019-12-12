@@ -13,7 +13,8 @@ class GifListContainer extends React.Component {
     }
 
     handleSubmit = (searchTerm) => {
-        this.fetchGifs(searchTerm)
+        if (searchTerm.trim())
+            this.fetchGifs(searchTerm)
     }
 
     fetchGifs = (searchTerm) => {

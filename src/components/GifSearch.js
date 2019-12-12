@@ -19,6 +19,7 @@ class GifSearch extends React.Component {
                 <form onSubmit={(event) => {
                     event.preventDefault()
                     this.props.handleSubmit(this.state.searchGif)
+                    this.setState({ searchGif: "" })
                 }}>
                     <div className="form-group">
                         <label>Enter a Search Term:</label>
