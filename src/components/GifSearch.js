@@ -1,6 +1,6 @@
 import React from "react"
 
-class GifSearch extends React.Component{
+class GifSearch extends React.Component {
 
     handleChange = (event) => {
         this.setState({
@@ -12,23 +12,21 @@ class GifSearch extends React.Component{
         searchGif: ""
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
 
-            <form onSubmit={(event) => {
-                event.preventDefault()
-                this.props.handleSubmit(this.state.searchGif)
+                <form onSubmit={(event) => {
+                    event.preventDefault()
+                    this.props.handleSubmit(this.state.searchGif)
                 }}>
+                    <div className="form-group">
+                        <label>Enter a Search Term:</label>
+                        <input className="form-control" type="text" name="searchGif" value={this.state.searchGif} onChange={this.handleChange} />
 
-                <label>
-                    Enter A Search Term:
-                </label>
-                <input type="text" name="searchGif" value={this.state.searchGif} onChange={this.handleChange}/>
-
-                <input type="submit" value="Find Gifs"/>
-
-            </form>
+                    </div>
+                    <input className="btn btn-primary" type="submit" value="Find Gifs" />
+                </form>
 
             </div>
         )
